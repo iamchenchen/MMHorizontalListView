@@ -22,6 +22,7 @@
 //
 
 #import "MMViewController.h"
+#import "MSMHorzListView.h"
 
 @interface MMViewController ()
 
@@ -33,14 +34,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+  [self.horizontalView setBackgroundColor:[UIColor blueColor]];
     [self.horizontalView setScrollEnabled:YES];
     
     self.horizontalView.delegate = self;
     self.horizontalView.dataSource = self;
-    self.horizontalView.cellSpacing = 20.0;
+    self.horizontalView.cellSpacing = 10.0;
     
     [self.horizontalView reloadData];
+  
+  NSArray *data = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", nil];
+  MSMHorzListView* horzlistview = [[MSMHorzListView alloc] initWithFrame:CGRectMake(10, 100, self.view.bounds.size.width-20, 50) withData:data andType:MSMRisky];
+  [self.view addSubview:horzlistview];
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +57,12 @@
 
 - (NSInteger)MMHorizontalListViewNumberOfCells:(MMHorizontalListView *)horizontalListView {
     
-    return 100;
+    return 10;
 }
 
 - (CGFloat)MMHorizontalListView:(MMHorizontalListView *)horizontalListView widthForCellAtIndex:(NSInteger)index {
     
-    return (arc4random() % 160)+ 20;
+    return 40;
 }
 
 - (MMHorizontalListViewCell*)MMHorizontalListView:(MMHorizontalListView *)horizontalListView cellAtIndex:(NSInteger)index {
@@ -64,7 +70,7 @@
     MMHorizontalListViewCell *cell = [horizontalListView dequeueCellWithReusableIdentifier:@"test"];
     
     if (!cell) {
-        cell = [[MMHorizontalListViewCell alloc] initWithFrame:CGRectMake(0, 0, 160, 160)];
+        cell = [[MMHorizontalListViewCell alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         cell.reusableIdentifier = @"test";
     }
     
@@ -75,12 +81,12 @@
 
 - (void)MMHorizontalListView:(MMHorizontalListView*)horizontalListView didSelectCellAtIndex:(NSInteger)index {
     
-    NSLog(@"selected cell %d", index);
+    NSLog(@"selected cell %ld", (long)index);
 }
 
 - (void)MMHorizontalListView:(MMHorizontalListView *)horizontalListView didDeselectCellAtIndex:(NSInteger)index {
     
-    NSLog(@"deselected cell %d", index);
+    NSLog(@"deselected cell %ld", (long)index);
 }
 
 @end

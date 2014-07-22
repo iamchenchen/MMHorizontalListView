@@ -21,6 +21,7 @@
 		32DCC6E317AC578900D3EE96 /* MMHorizontalListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DCC6E217AC578900D3EE96 /* MMHorizontalListView.m */; };
 		32DCC6E617AC582F00D3EE96 /* MMHorizontalListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DCC6E517AC582F00D3EE96 /* MMHorizontalListViewCell.m */; };
 		32DCC6E917AC8DBF00D3EE96 /* MMViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DCC6E717AC8DBF00D3EE96 /* MMViewController_iPad.xib */; };
+		3CF6A1CB197DDA34005F739F /* MSMHorzListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF6A1CA197DDA34005F739F /* MSMHorzListView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		32DCC6E417AC582F00D3EE96 /* MMHorizontalListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMHorizontalListViewCell.h; path = ../../../MMHorizontalListViewCell.h; sourceTree = "<group>"; };
 		32DCC6E517AC582F00D3EE96 /* MMHorizontalListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMHorizontalListViewCell.m; path = ../../../MMHorizontalListViewCell.m; sourceTree = "<group>"; };
 		32DCC6E817AC8DBF00D3EE96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MMViewController_iPad.xib; sourceTree = "<group>"; };
+		3CF6A1C9197DDA34005F739F /* MSMHorzListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMHorzListView.h; sourceTree = "<group>"; };
+		3CF6A1CA197DDA34005F739F /* MSMHorzListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMHorzListView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				32DCC6E017AC574000D3EE96 /* MMHorizontalListView */,
 				32DCC6C917AC56EF00D3EE96 /* MMAppDelegate.h */,
 				32DCC6CA17AC56EF00D3EE96 /* MMAppDelegate.m */,
+				3CF6A1C9197DDA34005F739F /* MSMHorzListView.h */,
+				3CF6A1CA197DDA34005F739F /* MSMHorzListView.m */,
 				32DCC6D217AC56EF00D3EE96 /* MMViewController.h */,
 				32DCC6D317AC56EF00D3EE96 /* MMViewController.m */,
 				32DCC6D517AC56EF00D3EE96 /* MMViewController_iPhone.xib */,
@@ -158,6 +163,11 @@
 				CLASSPREFIX = MM;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Manuele Maggi";
+				TargetAttributes = {
+					32DCC6B617AC56EF00D3EE96 = {
+						DevelopmentTeam = K7CKB6CDH3;
+					};
+				};
 			};
 			buildConfigurationList = 32DCC6B217AC56EF00D3EE96 /* Build configuration list for PBXProject "MMHorizontalListView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -198,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DCC6C717AC56EF00D3EE96 /* main.m in Sources */,
+				3CF6A1CB197DDA34005F739F /* MSMHorzListView.m in Sources */,
 				32DCC6CB17AC56EF00D3EE96 /* MMAppDelegate.m in Sources */,
 				32DCC6D417AC56EF00D3EE96 /* MMViewController.m in Sources */,
 				32DCC6E317AC578900D3EE96 /* MMHorizontalListView.m in Sources */,
@@ -296,10 +307,13 @@
 		32DCC6DE17AC56EF00D3EE96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMHorizontalListView/MMHorizontalListView-Prefix.pch";
 				INFOPLIST_FILE = "MMHorizontalListView/MMHorizontalListView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -307,10 +321,13 @@
 		32DCC6DF17AC56EF00D3EE96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMHorizontalListView/MMHorizontalListView-Prefix.pch";
 				INFOPLIST_FILE = "MMHorizontalListView/MMHorizontalListView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
